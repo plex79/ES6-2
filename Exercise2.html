@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body id="body">
+
+
+
+<script>
+
+const body = document.getElementById('body');
+    
+const persons = [
+    {name: 'Tom', age: 20},
+    {name: 'Mike', age: 33},
+    {name: 'Ben', age: 35}
+];
+
+const markup = `
+    
+    <ul class="persons">
+        ${persons.map(person => `<li>${person.name} is ${person.age}</li>`).join('')}
+    </ul>
+
+`;
+
+body.insertAdjacentHTML('afterbegin', markup);
+    
+console.log(markup);
+    
+</script>
+</body>
+</html>

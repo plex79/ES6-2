@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body id="body">
+
+
+
+<script>
+
+const body = document.getElementById('body');
+    
+    
+    function highlight(strings, ...values) {
+        let str = '';
+        
+        strings.forEach((string, i) => {
+            //str += `${string} <b>${values[i] || ''}</b>`; 
+            
+            str += `${string} ${values[i] ? `<b>${values[i]}</b>` : '' }`; 
+            
+        });
+        return str;
+    }
+    
+    const name = 'Dogggg';
+    const age = 99;
+    const color = 'red';
+    
+    const sentence = highlight`My dog name is ${name} and he is ${age} years old and he is ${color}.`;
+    
+    
+
+body.insertAdjacentHTML('afterbegin', sentence);
+    
+console.log(sentence);
+    
+</script>
+</body>
+</html>

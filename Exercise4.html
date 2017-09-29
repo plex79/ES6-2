@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body id="body">
+
+<div class="bio">
+    
+</div>
+
+<script>
+
+const dict = {
+    HTML: 'Hyper text...',
+    CSS: 'Cascading...',
+    JS: 'JavaScript'
+};
+
+function addAbbr(strings, ...values) {
+    const abbreviated = values.map(value => {
+       if(dict[value]) {
+           return `<abbr title="${dict[value]}">${value}</abbr>`
+       } 
+        return value;
+    });
+    
+    return strings.reduce((sentence, string, i) => {
+    
+        return `${sentence}${string}${abbreviated[i] || ''}`
+        
+    }, '')
+}
+    
+const first = 'Mike';
+const last = 'Smith';
+    
+const sentence = addAbbr`My name is ${first} ${last} and I love to code ${'HTML'}, ${'CSS'} and ${'JS'}.`;
+
+const bio = document.querySelector('.bio');
+const p = document.createElement('p');
+
+p.innerHTML = sentence;
+bio.appendChild(p);
+    
+</script>
+</body>
+</html>

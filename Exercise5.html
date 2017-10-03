@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body id="body">
+
+<div class="bio">
+    
+</div>
+
+<script>
+
+const me = {
+    first: 'Maciek',
+    last: 'Kle',
+    links: {
+        social: {
+            twitter: 'http://www.twitter.com/mk',
+            facebook: 'http://www.facebook.pl/mk' 
+        },
+        web: {
+            website: 'http://www.abc.pl',
+            blog: 'http://www.blog.pl/mk'
+        }
+    }
+}
+
+const {website: web, blog: bl} = me.links.web;
+console.log(web);
+console.log(bl);
+
+    
+//----------------------------------------------------------
+    
+    
+const tablica = [23, 23, 45, 56, 678];
+const [id1, id2, id3, id4, id5] = tablica;
+    
+console.log(id1, id2, id3, id4, id5);
+    
+
+    
+const data = 'asdasd, asfdsfdsf,435435, dsgdfgdfg';
+const [item1, item2, item3] = data.split(',');
+    
+console.log(item1, item2, item3);
+    
+
+    
+const team = ['me', 'you', 'other1', 'other2', 'other3'];
+const [boss, assist, ...rest] = team;
+    
+console.log(boss, assist, rest);
+    
+    
+</script>
+</body>
+</html>

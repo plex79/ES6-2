@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body id="body">
+
+<div class="bio">
+    
+</div>
+
+<script>
+
+
+    
+const team = ['me', 'you', 'other1', 'other2', 'other3'];
+    for(const kto of team) {
+        console.log(kto);
+    }
+
+    
+const team2 = ['me', 'you', 'other1', 'other2', 'other3'];
+    for(const [i, kto2] of team2.entries()) {
+        console.log(`${kto2} ma id: ${i}`);
+    }
+    
+function add() {
+    let all = 0;
+    for (const numer of arguments) {
+        all = all + numer;
+    }
+    return all;
+}
+let ciag = add(8,8,8,8,8,8,8,8,8,8);
+console.log(ciag);
+
+    
+const name = 'Kowalski Jan';
+    for (const letter of name) {
+        console.log(letter);
+    }
+    
+console.log('-----------');
+const owoce = ['banan', 'mango', 'banan', 'banan', 'truskawka', 'mango'];
+    const zlicz = owoce.reduce((wszystkie, kolejny) => {
+        
+        wszystkie[kolejny] = (wszystkie[kolejny] || 0) + 1; //(wszystkie[kolejny] || 0) -> jesli wszystkie[kolejny] jest FALSE to ma byc 0
+        
+        console.log(wszystkie);
+        return wszystkie;
+
+    }, {})
+    
+    console.log(zlicz);
+</script>
+</body>
+</html>
